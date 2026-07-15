@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>最初にAI化する仕事チェック｜Minto</title>
+  <meta name="description" content="5つの質問で、最初にAI化しやすい仕事かを無料で確認できます。登録・追加ツールは不要です。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www-minto.com/tools/first-ai-task-check.html">
+  <meta name="theme-color" content="#fff9f1">
+  <style>
+    :root{--ivory:#fff9f1;--white:#fff;--mint:#e8f7ef;--green:#13ad8b;--teal:#174f50;--deep:#073b45;--peach:#f28b72;--line:#d8e3de;--muted:#5f7774}
+    *{box-sizing:border-box} body{margin:0;background:var(--ivory);color:var(--deep);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}
+    header,main,footer{width:min(760px,calc(100% - 32px));margin:auto} header{padding:26px 0 10px}.brand{color:var(--teal);font-size:24px;font-weight:800;text-decoration:none}.brand span{color:var(--peach)}
+    main{padding:24px 0 64px}.panel{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,42px);box-shadow:0 18px 50px rgba(30,78,73,.1)}
+    .eyebrow{margin:0;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.12em}h1{margin:8px 0 12px;font-size:clamp(30px,7vw,46px);line-height:1.35;letter-spacing:-.04em}.lead,.note{color:var(--muted)}
+    fieldset{border:0;padding:0;margin:30px 0}legend{font-weight:800;margin-bottom:12px}label{display:block;margin:9px 0;padding:13px 14px;border:1px solid var(--line);border-radius:12px;cursor:pointer;background:#fff}label:has(input:checked){border-color:var(--green);background:var(--mint)}
+    input{margin-right:8px}.button{display:inline-flex;width:100%;min-height:52px;align-items:center;justify-content:center;border:0;border-radius:14px;background:var(--teal);color:#fff;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;padding:10px 18px}.button.secondary{margin-top:10px;background:#fff;color:var(--teal);border:1px solid var(--line)}
+    .result{display:none;margin-top:26px;padding:22px;border-radius:18px;background:var(--mint)}.result.show{display:block}.result h2{margin:0 0 8px;font-size:24px}.result p{margin:8px 0}.safe-note{font-size:13px;color:var(--muted)}
+    footer{padding:0 0 40px;color:var(--muted);font-size:13px}footer a{color:var(--teal)}
+  </style>
+</head>
+<body>
+<header><a class="brand" href="/">Minto<span>●</span></a></header>
+<main>
+  <section class="panel">
+    <p class="eyebrow">FREE SELF-CHECK</p>
+    <h1>最初にAI化する仕事チェック</h1>
+    <p class="lead">5つの質問に答えると、その仕事が「最初のAI活用」に向いているかを確認できます。回答と結果は送信・保存されず、この画面内だけで処理されます。</p>
+    <form id="check-form">
+      <fieldset><legend>1. その仕事は週1回以上ありますか？</legend><label><input type="radio" name="q1" value="1" required>はい</label><label><input type="radio" name="q1" value="0">いいえ</label></fieldset>
+      <fieldset><legend>2. 毎回の手順や文章に共通点がありますか？</legend><label><input type="radio" name="q2" value="1" required>はい</label><label><input type="radio" name="q2" value="0">いいえ</label></fieldset>
+      <fieldset><legend>3. 下書きを人が確認してから使えますか？</legend><label><input type="radio" name="q3" value="1" required>はい</label><label><input type="radio" name="q3" value="0">いいえ</label></fieldset>
+      <fieldset><legend>4. 個人情報・機密情報を入力せず試せますか？</legend><label><input type="radio" name="q4" value="1" required>はい</label><label><input type="radio" name="q4" value="0">いいえ</label></fieldset>
+      <fieldset><legend>5. 間違っても公開・送信・決済が自動実行されませんか？</legend><label><input type="radio" name="q5" value="1" required>はい</label><label><input type="radio" name="q5" value="0">いいえ</label></fieldset>
+      <button class="button" type="submit">結果を見る</button>
+    </form>
+    <div id="result" class="result" tabindex="-1" aria-live="polite"></div>
+  </section>
+</main>
+<footer><a href="/">Minto公式サイトへ戻る</a> · <a href="/privacy.html">プライバシーポリシー</a></footer>
+<script>
+  const form=document.getElementById('check-form');
+  const result=document.getElementById('result');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const data=new FormData(form);
+    const values=[1,2,3,4,5].map(n=>Number(data.get('q'+n)));
+    const score=values.reduce((a,b)=>a+b,0);
+    const unsafe=values[2]===0||values[3]===0||values[4]===0;
+    if(unsafe){
+      result.innerHTML='<h2>今回はAI化を急がないでください</h2><p>人の確認、機密情報の除外、自動送信・公開・決済をしない条件を先に整えましょう。</p><p class="safe-note">条件が整うまでは、AIを使わず従来手順を続けるのが安全です。</p>';
+    }else if(score>=4){
+      result.innerHTML='<h2>最初のAI活用に向いています</h2><p>まずは下書き作成だけに使い、必ず人が確認してから利用しましょう。</p><a class="button" href="https://note.com/major_drake4006/n/n0749d66fe1c2?utm_source=minto&utm_medium=owned&utm_campaign=free_self_check" target="_blank" rel="noopener">無料で3つの型を試す</a>';
+    }else{
+      result.innerHTML='<h2>小さく試すのがおすすめです</h2><p>繰り返しの多い一部分だけを選び、1回だけ下書きを作って比較しましょう。</p><a class="button secondary" href="https://note.com/major_drake4006/n/n0749d66fe1c2?utm_source=minto&utm_medium=owned&utm_campaign=free_self_check" target="_blank" rel="noopener">無料テンプレートを見る</a>';
+    }
+    result.classList.add('show');
+    result.focus();
+  });
+</script>
+</body>
+</html>
