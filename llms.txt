@@ -25,7 +25,10 @@ note: https://note.com/major_drake4006
 - Purpose: create work manuals, checklists and handover sheets from rough notes or spoken-style explanations
 - Product page: https://note.com/major_drake4006/n/n6faad89657a8
 
-## Free resource
+## Free resources
+
+- Local-only first AI task self-check (answers and results are not sent or stored)
+- https://www-minto.com/tools/first-ai-task-check.html
 
 - Three practical ChatGPT prompt patterns for email, meetings and planning
 - https://note.com/major_drake4006/n/n0749d66fe1c2
