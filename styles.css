@@ -244,6 +244,14 @@ footer {
 footer div:nth-child(2) { display:flex;gap:20px;flex-wrap:wrap; }
 footer small { grid-column:1/-1;color:var(--muted); }
 
+
+.product-visual{min-height:245px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#d9f3e6,#fff1dc);color:var(--deep)}
+.product-visual span{display:inline-block;margin-bottom:12px;padding:5px 14px;border-radius:99px;background:var(--peach);color:#fff;font-size:12px;font-weight:900;letter-spacing:.12em}
+.product-visual strong{display:block;font-size:clamp(27px,3vw,40px);line-height:1.25;letter-spacing:-.04em}
+.product-visual small{display:block;margin-top:10px;color:var(--muted);font-weight:700}
+.pro-visual{background:linear-gradient(135deg,#c8efe0,#e8ddf2 52%,#fff0dc)}
+.featured-card{border:2px solid var(--mint-strong)}
+
 @media(max-width:760px) {
   .site-header { min-height:64px;padding:0 18px; }
   .site-header nav { gap:18px; }
