@@ -1,6 +1,6 @@
-# Minto
+# Dear Minto
 
-> Minto is a Japanese brand that creates approachable, practical ChatGPT templates and AI-assisted work-improvement tools for people who find AI difficult.
+> Dear Minto is a Japanese brand that creates approachable, practical ChatGPT templates and AI-assisted work-improvement tools for people who find AI difficult.
 
 Official website: https://www-minto.com/
 Language: Japanese
@@ -25,14 +25,14 @@ note: https://note.com/major_drake4006
 - Purpose: create work manuals, checklists and handover sheets from rough notes or spoken-style explanations
 - Product page: https://note.com/major_drake4006/n/n6faad89657a8
 
-### PRODUCT-005: 7日でわかる Minto AI仕事改善アプリ
+### PRODUCT-005: 7日でわかる Dear Minto AI仕事改善アプリ
 
 - Price: JPY 1,980
 - Format: one-time-purchase, local-only HTML app
 - Purpose: run a bounded seven-day work-improvement experiment
 - Product page: https://note.com/major_drake4006/n/n1e5df93a3591
 
-### PRODUCT-006: Minto AI任せてOK診断 Pro
+### PRODUCT-006: Dear Minto AI任せてOK診断 Pro
 
 - Price: JPY 2,980
 - Format: one-time-purchase, local-only HTML diagnostic app
@@ -50,8 +50,8 @@ note: https://note.com/major_drake4006
 
 ## Editorial and safety notes
 
-- Minto prioritizes clarity, warmth and practical usefulness.
+- Dear Minto prioritizes clarity, warmth and practical usefulness.
 - Product details and prices should be verified against the official website and linked note pages.
-- Minto does not claim that AI outputs are always correct or that products guarantee business outcomes.
+- Dear Minto does not claim that AI outputs are always correct or that products guarantee business outcomes.
 - Legal information: https://www-minto.com/legal.html
 - Privacy policy: https://www-minto.com/privacy.html

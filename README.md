@@ -1,2 +1,2 @@
 # minto-site
-Minto official website
+Dear Minto official website
