@@ -1,0 +1,11 @@
+<?php get_header(); ?>
+<header class="page-hero"><div class="shell"><p class="eyebrow"><span></span> FREE AI CHECK</p><h1>最初のAI仕事診断</h1><p>3つの質問から、最初に試す仕事を見つけます。</p></div></header>
+<section class="section"><div class="content-wrap" style="margin-top:0"><div class="entry-content"><div id="dm-check" class="diagnosis-box">
+  <p class="card-kicker">QUESTION <span id="dm-step">1</span> / 3</p><h2 id="dm-question">いちばん時間を取られている仕事は？</h2>
+  <div id="dm-options"><button data-answer="write">メールや文章作成</button><button data-answer="organize">情報の整理・要約</button><button data-answer="manual">手順の説明・引き継ぎ</button></div>
+  <div id="dm-result" hidden></div>
+</div></div></div></section>
+<style>.diagnosis-box{background:var(--cream);padding:clamp(28px,6vw,60px);border-radius:12px;box-shadow:var(--shadow)}.diagnosis-box h2{border:0;margin:10px 0 30px;padding:0}.diagnosis-box button{display:block;width:100%;text-align:left;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:17px 20px;margin:10px 0;cursor:pointer;font-weight:700}.diagnosis-box button:hover{border-color:var(--orange);transform:translateX(4px)}</style>
+<script>document.addEventListener('DOMContentLoaded',()=>{const qs=[['その仕事は、週に何回ありますか？',['ほぼ毎日','週に数回','月に数回']],['できあがった内容を人が確認できますか？',['はい、確認できる','一部なら確認できる','確認が難しい']]],box=document.querySelector('#dm-check'),q=document.querySelector('#dm-question'),opts=document.querySelector('#dm-options'),step=document.querySelector('#dm-step'),result=document.querySelector('#dm-result');let n=0,first='write';opts.addEventListener('click',e=>{if(!e.target.matches('button'))return;if(n===0)first=e.target.dataset.answer;n++;if(n<=2){step.textContent=n+1;q.textContent=qs[n-1][0];opts.innerHTML=qs[n-1][1].map(x=>'<button>'+x+'</button>').join('')}else{const map={write:['メール作成','ChatGPT仕事テンプレート10選'],organize:['情報の要約・整理','7日間AI仕事改善アプリ'],manual:['業務手順のたたき台','業務マニュアル作成キット']},r=map[first];q.textContent='最初に試すなら「'+r[0]+'」';opts.hidden=true;result.hidden=false;result.innerHTML='<p>機密情報を入れず、AIの回答を人が確認する前提で、小さく試しましょう。</p><a class="button button--primary" href="'+location.origin+'/#services">おすすめの「'+r[1]+'」を見る <span>→</span></a>'}})});</script>
+<?php get_footer(); ?>
+
