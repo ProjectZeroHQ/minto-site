@@ -34,6 +34,10 @@ function dear_minto_analytics() {
         gtag('event', 'note_product_click', {
           link_url: link.href,
           link_text: (link.textContent || '').trim(),
+          item_id: link.dataset.productId || '',
+          item_name: link.dataset.productName || '',
+          value: Number(link.dataset.productPrice || 0),
+          currency: 'JPY',
           transport_type: 'beacon'
         });
       });
@@ -47,7 +51,7 @@ add_filter('excerpt_length', 'dear_minto_excerpt_length');
 
 function dear_minto_menu_fallback() {
     echo '<ul class="site-nav__list">';
-    echo '<li><a href="' . esc_url(home_url('/#services')) . '">できること</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/#services')) . '">商品を見る</a></li>';
     echo '<li><a href="' . esc_url(home_url('/blog/')) . '">AI仕事術</a></li>';
     echo '<li><a href="' . esc_url(home_url('/#about')) . '">Dear Mintoについて</a></li>';
     echo '<li><a class="nav-cta" href="' . esc_url(home_url('/#diagnosis')) . '">無料で診断する</a></li>';

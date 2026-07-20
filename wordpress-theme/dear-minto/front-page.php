@@ -8,10 +8,10 @@
       <h1><span>むずかしいAIを、</span><em>やさしい一歩に。</em></h1>
       <p class="hero-lead">Dear Mintoは、ChatGPTを「知っている」から<br class="desktop-only">「仕事で使える」へ変える実務ブランドです。</p>
       <div class="hero-actions">
-        <a class="button button--primary" href="#diagnosis">30秒で最初の一歩を診断 <span>→</span></a>
-        <a class="text-link" href="#services">できることを見る <span>↘</span></a>
+        <a class="button button--primary product-link" href="https://note.com/major_drake4006/n/n54bf022607a3" target="_blank" rel="noopener noreferrer" data-product-id="template-10" data-product-name="ChatGPT仕事テンプレート10選" data-product-price="980">980円のテンプレートを見る <span>→</span></a>
+        <a class="text-link" href="#diagnosis">無料で仕事を診断する <span>↘</span></a>
       </div>
-      <div class="trust-row"><span>✓ 初心者向け</span><span>✓ 買い切り中心</span><span>✓ すぐ実務で使える</span></div>
+      <div class="trust-row"><span>✓ 初心者向け</span><span>✓ 買い切りPDF</span><span>✓ noteで安全に購入</span></div>
     </div>
     <div class="hero-visual reveal reveal--delay">
       <div class="hero-card">
@@ -47,19 +47,21 @@
     <p>小さく試す無料ガイドから、仕事を整える実践キットまで。いま必要な深さから選べます。</p>
   </div>
   <div class="shell product-grid">
-    <article class="product-card product-card--feature">
+    <article class="product-card product-card--feature" data-product-card>
+      <span class="recommended-badge">最初の1つにおすすめ</span>
       <div class="product-card__art product-card__art--mint"><span>START HERE</span><div class="mini-sheet"><i></i><i></i><i></i><b>ChatGPT</b></div></div>
-      <div class="product-card__body"><p class="card-kicker">はじめての方へ</p><h3>ChatGPT仕事テンプレート10選</h3><p>メール・要約・アイデア出し。よくある仕事からAIを使い始めるための、そのまま使える型。</p><div class="product-meta"><b>¥980</b><a href="https://note.com/major_drake4006/n/n54bf022607a3" target="_blank" rel="noopener noreferrer">noteで商品を見る <span>→</span></a></div></div>
+      <div class="product-card__body"><p class="card-kicker">はじめての方へ</p><h3>ChatGPT仕事テンプレート10選</h3><p>メール・要約・アイデア出し。よくある仕事からAIを使い始めるための、そのまま使える型。</p><ul class="product-benefits"><li>コピーしてすぐ使える</li><li>追加ツール不要</li><li>買い切りPDF</li></ul><div class="product-meta"><b>¥980</b><a class="product-link" href="https://note.com/major_drake4006/n/n54bf022607a3" target="_blank" rel="noopener noreferrer" data-product-id="template-10" data-product-name="ChatGPT仕事テンプレート10選" data-product-price="980">内容を確認して購入 <span>→</span></a></div></div>
     </article>
     <article class="product-card">
       <div class="product-card__art product-card__art--peach"><span>WORK BETTER</span><div class="manual-icon"><i></i><i></i><i></i></div></div>
-      <div class="product-card__body"><p class="card-kicker">業務を整えたい方へ</p><h3>業務マニュアル作成キット</h3><p>属人化した仕事を、AIと一緒に誰でも進められる手順へ。穴埋め形式で完成します。</p><div class="product-meta"><b>¥1,280</b><a href="https://note.com/major_drake4006/n/n6faad89657a8" target="_blank" rel="noopener noreferrer">noteで商品を見る <span>→</span></a></div></div>
+      <div class="product-card__body"><p class="card-kicker">業務を整えたい方へ</p><h3>業務マニュアル作成キット</h3><p>属人化した仕事を、AIと一緒に誰でも進められる手順へ。穴埋め形式で完成します。</p><div class="product-meta"><b>¥1,280</b><a class="product-link" href="https://note.com/major_drake4006/n/n6faad89657a8" target="_blank" rel="noopener noreferrer" data-product-id="manual-kit" data-product-name="業務マニュアル作成キット" data-product-price="1280">内容を確認して購入 <span>→</span></a></div></div>
     </article>
     <article class="product-card">
       <div class="product-card__art product-card__art--night"><span>7 DAYS</span><div class="week-icon">7<small>DAY</small></div></div>
-      <div class="product-card__body"><p class="card-kicker">習慣にしたい方へ</p><h3>7日間AI仕事改善アプリ</h3><p>毎日ひとつ、15分。小さな実践を重ねて、AIを使う習慣と判断力を身につけます。</p><div class="product-meta"><b>¥1,980</b><a href="https://note.com/major_drake4006/n/n1e5df93a3591" target="_blank" rel="noopener noreferrer">noteで商品を見る <span>→</span></a></div></div>
+      <div class="product-card__body"><p class="card-kicker">習慣にしたい方へ</p><h3>7日間AI仕事改善アプリ</h3><p>毎日ひとつ、15分。小さな実践を重ねて、AIを使う習慣と判断力を身につけます。</p><div class="product-meta"><b>¥1,980</b><a class="product-link" href="https://note.com/major_drake4006/n/n1e5df93a3591" target="_blank" rel="noopener noreferrer" data-product-id="seven-days" data-product-name="7日間AI仕事改善アプリ" data-product-price="1980">内容を確認して購入 <span>→</span></a></div></div>
     </article>
   </div>
+  <div class="shell purchase-assurance"><span>お支払いはnoteで完結</span><span>購入後すぐに内容を確認</span><span>質問はメールで受付</span></div>
 </section>
 
 <section class="diagnosis section" id="diagnosis">
@@ -96,6 +98,18 @@
   </div>
 </section>
 
-<section class="closing"><div class="shell"><p>ONE SMALL STEP WITH AI</p><h2>今日の仕事に、<br><em>やさしい変化</em>を。</h2><a class="button button--primary" href="#diagnosis">無料診断からはじめる <span>→</span></a></div></section>
+<section class="faq section" id="faq">
+  <div class="shell faq-grid">
+    <div><p class="section-number">05 / FAQ</p><h2 class="display-title">購入前の、<br>よくある質問。</h2></div>
+    <div class="faq-list">
+      <details open><summary>ChatGPT初心者でも使えますか？</summary><p>はい。難しい設定や追加ツールは不要です。テンプレートをコピーし、必要な箇所をご自身の仕事に合わせて置き換えて使えます。</p></details>
+      <details><summary>商品はどこで購入できますか？</summary><p>各商品のボタンからnoteの商品ページを開き、内容をご確認のうえ購入できます。お支払いと購入後の閲覧はnote上で行います。</p></details>
+      <details><summary>買い切りですか？</summary><p>はい。表示価格で購入する買い切り商品です。月額料金はかかりません。</p></details>
+      <details><summary>スマートフォンでも使えますか？</summary><p>はい。スマートフォンから閲覧できます。PDFのコピーや編集方法は、ご利用端末とアプリによって異なります。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing"><div class="shell"><p>ONE SMALL STEP WITH AI</p><h2>今日の仕事に、<br><em>やさしい変化</em>を。</h2><a class="button button--primary product-link" href="https://note.com/major_drake4006/n/n54bf022607a3" target="_blank" rel="noopener noreferrer" data-product-id="template-10" data-product-name="ChatGPT仕事テンプレート10選" data-product-price="980">980円のテンプレートを見る <span>→</span></a></div></section>
 
 <?php get_footer(); ?>
