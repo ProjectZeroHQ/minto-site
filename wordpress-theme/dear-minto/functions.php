@@ -31,7 +31,11 @@ function dear_minto_analytics() {
       document.addEventListener('click', function (event) {
         var link = event.target.closest('a[href*="note.com"]');
         if (!link) return;
+        var measuredUrl = new URL(link.href, window.location.href);
+        var campaignId = measuredUrl.searchParams.get('campaign_id') || measuredUrl.searchParams.get('utm_campaign') || '';
         gtag('event', 'note_product_click', {
+          campaign_id: campaignId,
+          channel: 'site',
           link_url: link.href,
           link_text: (link.textContent || '').trim(),
           item_id: link.dataset.productId || '',
