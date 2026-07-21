@@ -184,6 +184,87 @@ HTML;
 }
 add_action('admin_init', 'dear_minto_seed_legal_pages');
 
+function dear_minto_seed_next_blog_draft() {
+    if (get_option('dear_minto_blog_draft_version') === '1.0') return;
+
+    $slug = 'chatgpt-answer-misalignment';
+    $existing = get_page_by_path($slug, OBJECT, 'post');
+    if ($existing) {
+        update_option('dear_minto_blog_draft_version', '1.0');
+        return;
+    }
+
+    $category = term_exists('AI仕事術', 'category');
+    if (!$category) $category = wp_insert_term('AI仕事術', 'category', ['slug' => 'ai-work']);
+    $category_id = is_array($category) ? (int) $category['term_id'] : 0;
+
+    $content = <<<'HTML'
+<p>ChatGPTに仕事を頼んだのに、長すぎる文章や的外れな提案が返ってきたことはありませんか。</p>
+<p>「AIは仕事に使えない」と感じる場面の多くは、能力の問題ではなく、依頼に必要な情報が揃っていないことから起こります。そこで今回は、回答がずれる代表的な7つの原因と、すぐできる直し方を紹介します。</p>
+<h2>1．目的が書かれていない</h2>
+<p>「メールを書いて」だけでは、お礼なのか、依頼なのか、お詫びなのかが分かりません。まず完成後に何を実現したいかを伝えます。</p>
+<p><strong>改善前</strong></p>
+<blockquote><p>取引先へのメールを書いてください。</p></blockquote>
+<p><strong>改善後</strong></p>
+<blockquote><p>納期を3日延ばしてもらうための依頼メールを書いてください。相手に事情を理解してもらい、了承を得ることが目的です。</p></blockquote>
+<p>メール作成の基本は「<a href="https://www-minto.com/chatgpt-email-writing/">ChatGPTでメールを作る方法 初心者向け例文と5つのコツ</a>」でも紹介しています。</p>
+<h2>2．読む相手が分からない</h2>
+<p>同じ内容でも、上司、取引先、一般のお客様では適切な表現が変わります。「誰が読むか」と「相手との関係」を一文加えましょう。</p>
+<blockquote><p>読む相手は、初めて連絡する取引先の担当者です。丁寧ですが、堅すぎない表現にしてください。</p></blockquote>
+<h2>3．元になる情報が不足している</h2>
+<p>AIは、伝えていない社内事情や数字まで知っているわけではありません。日時、商品名、決定事項など、回答に必要な材料を箇条書きで渡します。</p>
+<p>ただし、個人情報、顧客情報、社外秘の資料、パスワードなどは入力しないでください。固有名詞を仮名に置き換えるなど、安全を確認してから使います。</p>
+<h2>4．出力の形を指定していない</h2>
+<p>欲しいのが短い要点なのに、長い説明が返る場合があります。文字数、項目数、表や箇条書きなど、完成形を指定します。</p>
+<blockquote><p>結論を先に書き、理由を3点の箇条書きで示してください。全体を400字以内にしてください。</p></blockquote>
+<p>業務手順として整える場合は「<a href="https://www-minto.com/chatgpt-work-manual/">ChatGPTで業務マニュアルを作る手順 メモから作る7ステップ</a>」も参考になります。</p>
+<h2>5．一度に頼みすぎている</h2>
+<p>調査、企画、文章作成、チェックを一つの指示に詰め込むと、どこかが浅くなりやすくなります。仕事を小さく分け、順番に依頼しましょう。</p>
+<ol><li>必要な情報を整理する</li><li>構成案を作る</li><li>本文を書く</li><li>誤解がないか確認する</li></ol>
+<p>最初から完成品を求めるより、途中で確認できるため修正も簡単になります。</p>
+<h2>6．正解の基準を伝えていない</h2>
+<p>「分かりやすく」「良い文章に」といった言葉は、人によって意味が違います。避けたい表現や合格条件を具体的にします。</p>
+<blockquote><p>専門用語を使わず、中学生でも読める言葉にしてください。断定できない内容は断定せず、確認が必要な点を最後に分けてください。</p></blockquote>
+<h2>7．最初の回答を完成品だと思っている</h2>
+<p>ChatGPTの最初の回答は、たたき台として扱うのが安全です。「ここは残す」「ここを短くする」と具体的に伝え、最後は必ず人が事実、数字、固有名詞、相手への配慮を確認します。</p>
+<p>特に、契約、法律、医療、会計、人事判断など重要な業務では、AIだけで結論を出さず、専門家や責任者による確認が必要です。AIに任せる範囲を判断するときは「<a href="https://www-minto.com/ai-delegation-criteria/">その仕事をAIに任せてよいか 判断する4つの基準</a>」をご覧ください。</p>
+<h2>迷ったときに使える基本の指示</h2>
+<p>次の型をコピーし、角括弧の中を置き換えてください。</p>
+<blockquote><p>［作りたいもの］を作ってください。<br>目的は［実現したいこと］です。<br>読む相手は［相手と関係］です。<br>材料は［必要な情報］です。<br>［文字数・形式・雰囲気］で出してください。<br>情報が足りない場合は、作成前に質問してください。<br>推測した部分と、人の確認が必要な部分を最後に示してください。</p></blockquote>
+<h2>まとめ</h2>
+<p>回答がずれたときは、指示を全部書き直す必要はありません。「目的」「相手」「材料」「形式」「基準」のうち、足りないものを一つ追加するだけでも改善できます。</p>
+<p>初めて仕事で使う方は「<a href="https://www-minto.com/chatgpt-first-3-uses/">ChatGPT初心者が仕事で最初に試す3つの使い方</a>」から始めるのもおすすめです。</p>
+<p>毎回ゼロから指示を考えたくない方へ、Dear Mintoでは、メール・要約・アイデア整理などに使える指示の型を10個にまとめています。</p>
+<p><strong><a href="https://note.com/major_drake4006/n/n54bf022607a3?utm_source=minto_blog&amp;utm_medium=owned&amp;utm_campaign=product001&amp;utm_content=answer_misalignment" target="_blank" rel="noopener" data-product-id="template-10" data-product-name="ChatGPT仕事テンプレート10選" data-product-price="980">ChatGPT仕事テンプレート10選を見る（買い切り980円）</a></strong></p>
+<p>追加ツールや月額料金は不要です。内容を確認してから購入できます。</p>
+HTML;
+
+    $post_id = wp_insert_post([
+        'post_type' => 'post',
+        'post_status' => 'draft',
+        'post_title' => 'ChatGPTの回答がずれる原因7つ 仕事で使える指示に直す方法',
+        'post_name' => $slug,
+        'post_excerpt' => 'ChatGPTの回答が意図とずれる7つの原因と、仕事で使える指示への直し方を初心者向けに解説。すぐ試せる改善例と確認項目も紹介します。',
+        'post_content' => wp_slash($content),
+        'post_category' => $category_id ? [$category_id] : [],
+    ]);
+
+    if ($post_id && !is_wp_error($post_id)) {
+        update_post_meta($post_id, '_yoast_wpseo_metadesc', 'ChatGPTの回答が意図とずれる7つの原因と、仕事で使える指示への直し方を初心者向けに解説。すぐ試せる改善例と確認項目も紹介します。');
+        update_option('dear_minto_blog_draft_version', '1.0');
+        set_transient('dear_minto_new_draft_id', (int) $post_id, DAY_IN_SECONDS);
+    }
+}
+add_action('admin_init', 'dear_minto_seed_next_blog_draft');
+
+function dear_minto_new_draft_notice() {
+    $post_id = (int) get_transient('dear_minto_new_draft_id');
+    if (!$post_id || !current_user_can('edit_post', $post_id)) return;
+    delete_transient('dear_minto_new_draft_id');
+    echo '<div class="notice notice-success is-dismissible"><p><strong>Dear Minto：</strong>次の記事を下書きとして登録しました。<a href="' . esc_url(get_edit_post_link($post_id)) . '">記事を確認する</a></p></div>';
+}
+add_action('admin_notices', 'dear_minto_new_draft_notice');
+
 function dear_minto_blog_query($query) {
     if (!is_admin() && $query->is_main_query() && $query->is_home()) {
         $query->set('category_name', 'ai-work');
