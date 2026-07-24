@@ -70,7 +70,7 @@
       <p class="section-number section-number--light">FREE TOOL</p>
       <h2>AIに任せる仕事、<br>最初のひとつを見つけます。</h2>
       <p>3つの質問に答えるだけ。いまの仕事に合う、無理のないAI活用の始め方をご案内します。</p>
-      <a class="button button--cream" href="<?php echo esc_url(home_url('/tools/first-ai-task-check/')); ?>">無料で診断をはじめる <span>→</span></a>
+      <a class="button button--cream" href="https://project-zero-minto-ai-diagnostic.iam1104k.workers.dev/">無料で診断をはじめる <span>→</span></a>
       <small>登録不要・約30秒</small>
     </div>
     <div class="diagnosis-visual" aria-hidden="true"><div class="chat chat--one">メール作成</div><div class="chat chat--two">情報整理</div><div class="chat chat--three">手順書</div><div class="answer-dot">?</div></div>
