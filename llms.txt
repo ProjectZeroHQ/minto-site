@@ -18,7 +18,7 @@ note: https://note.com/major_drake4006
 - Purpose: reusable prompts for email, meetings, planning and everyday office work
 - Product page: https://note.com/major_drake4006/n/n54bf022607a3
 
-### PRODUCT-002: ChatGPT業務マニュアル作成キット
+### PRODUCT-003: ChatGPT業務マニュアル作成キット
 
 - Price: JPY 1,280
 - Format: 21-page, one-time-purchase PDF
