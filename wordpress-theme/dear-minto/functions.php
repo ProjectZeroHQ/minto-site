@@ -275,3 +275,27 @@ function dear_minto_blog_query($query) {
     }
 }
 add_action('pre_get_posts', 'dear_minto_blog_query');
+
+
+/**
+ * Serve the canonical AI-readable product index from the active theme.
+ * This keeps /llms.txt available after the WordPress migration.
+ */
+function dear_minto_serve_llms_txt() {
+    $request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if (untrailingslashit((string) $request_path) !== '/llms.txt') return;
+
+    $file = get_template_directory() . '/llms.txt';
+    if (!is_readable($file)) {
+        status_header(404);
+        exit;
+    }
+
+    status_header(200);
+    header('Content-Type: text/plain; charset=utf-8');
+    header('X-Content-Type-Options: nosniff');
+    header('Cache-Control: public, max-age=300');
+    readfile($file);
+    exit;
+}
+add_action('template_redirect', 'dear_minto_serve_llms_txt', 0);
